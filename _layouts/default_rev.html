@@ -67,7 +67,15 @@
 
           <div id="alpha">
             <div id="alpha-inner">
+
+{% if page.layout == "page" %}
               <div class="page-asset asset" style="overflow:visible;">
+{% endif %}
+
+{% if page.layout == "post" %}
+              <div class="entry-asset asset" style="overflow:visible;">
+{% endif %}
+
                 <div class="asset-header">         
                   <h1 id="page-title" class="asset-name">{{ page.title }}</h1>
                 </div>
@@ -78,12 +86,19 @@
                   {% if page.hero %}{% include hero.html %}{% endif %}
 
 
+
                     {{ content }}
 
 
-                  {% include close.html %}
 
+                    {% if post.comments %}
+                      <hr>
+                      {{ post.comments}}
+                    {% endif %}
 
+                    {% include close.html %}
+
+{% if page.layout == "page" %}
                   </div>
                 </div>
 
@@ -91,6 +106,37 @@
                 </div>
 
               </div>
+{% endif %}
+
+{% if page.layout == "post" %}
+                  </div>
+                </div>
+
+                <div class="asset-footer">  
+
+<h2 style="font-weight: bold;">Recent posts</h2>
+
+{% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+{% for year in postsByYear limit : 3 %}
+
+<h2 class="yeartitle">{{ year.name }}</h2>
+
+<div class="shuffleboxwrapper">
+
+  {% for post in year.items %}
+    <div class="shufflebox"><a href="{{ post.url }}">{{ post.title  | truncate: 25, "" | escape }}</a></div>
+  {% endfor %}
+
+  <br style="clear: both;" />
+</div>
+
+{% endfor %}
+
+
+                </div>
+              </div>
+{% endif %}
+
             </div>
           </div>
 

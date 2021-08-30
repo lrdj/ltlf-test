@@ -1,6 +1,172 @@
 ---
-layout: default
 ---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
 
-{{ content }}
+<body id="professional-website" class="mt-page-archive layout-wm">
 
+  <div id="container">
+    <div id="container-inner">
+
+<!-- header, masthead etc. -->
+
+      <div id="header">
+        <div id="header-inner">
+
+          <div id="header-content">
+            <div id="header-name"><a href="{{ site.baseurl }}/" accesskey="1">{{ site.title }}</a></div>
+            <div id="header-description">{{ site.description }}</div>
+
+            <!--
+            div class="widget-sign-in widget">
+              <h3 class="widget-header"><a href="#">Foo! {{ page.layout }}</a></h3>
+              <div id="signin-widget-content" class="widget-content"></div>
+            </div
+            -->
+
+          </div>
+
+        </div>
+      </div>
+
+<!-- primary nav -->
+
+      <div id="main-navigation">
+        <div id="main-navigation-inner">
+
+          {% include primarynav.html %}
+
+          <div class="widget-search widget">
+            <h3 class="widget-header">Search</h3>
+            <div class="widget-content">
+              <form method="get" action="#">
+                <input type="text" id="search" class="ti" name="search" value="" />
+                <input type="submit" accesskey="4" value="Search" />
+              </form>
+            </div>
+            {% if site.search == true %}
+            <div class="search-content">
+              {% include search/search_form.html %}
+            </div>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>
+
+
+<!-- grid centre (alpha and beta columns) -->
+
+      <div id="content">
+        <div id="content-inner">
+
+          <div id="alpha">
+            <div id="alpha-inner">
+              <div class="entry-asset asset" style="overflow:visible;">
+
+                <div class="asset-header">         
+                  <h1 id="page-title" class="asset-name">{{ page.title }}</h1>
+                </div>
+
+                <div class="asset-content">
+                  <div class="asset-body">
+
+                  {% if page.hero %}{% include hero.html %}{% endif %}
+
+
+
+                    {{ content }}
+
+
+
+                    {% if post.comments %}
+                      <hr>
+                      {{ post.comments}}
+                    {% endif %}
+
+                    {% include close.html %}
+
+                  </div>
+                </div>
+
+                <div class="asset-footer">  
+
+<h2 style="font-weight: bold;">Recent posts</h2>
+
+{% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+{% for year in postsByYear limit : 3 %}
+
+<h2 class="yeartitle">{{ year.name }}</h2>
+
+<div class="shuffleboxwrapper">
+
+  {% for post in year.items %}
+    <div class="shufflebox"><a href="{{ post.url }}">{{ post.title  | truncate: 25, "" | escape }}</a></div>
+  {% endfor %}
+
+  <br style="clear: both;" />
+</div>
+
+{% endfor %}
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="beta">
+            <div id="beta-inner">
+              {% include beta.html %}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+<!-- /end of grid centre (alpha and beta columns) -->
+
+
+<!-- footer -->
+
+      <div id="footer">
+        <div id="footer-inner">
+          <div id="footer-content">
+
+            {% include footer/custom.html %}
+          
+            <div class="widget-powered widget">
+              <div class="widget-content">
+                <img src="{{ site.baseurl }}/i/powered-by-jekyll.png" width="100" />
+                <br />
+                With thanks <a href="https://jekyllrb.com/team/">Jekyll</a>
+              </div>
+            </div>
+
+            <div class="widget-footer-links widget">
+              <h3 class="widget-header">Links</h3>
+              <div class="widget-content">
+                <ul>
+                  <li><a href="{{ site.baseurl }}/blog.html">Home</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <meta name="google-site-verification" content="B5yCXoYYHDkhTXL87MU-aTa_bFu1vXDY5_ryi0qYH8c" />
+
+  {% include scripts.html %}
+
+</body>
+</html>
