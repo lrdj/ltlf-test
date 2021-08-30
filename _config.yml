@@ -1,0 +1,83 @@
+# Site Settings
+locale                   : "en-GB"
+title                    : "Life to Live Films"
+name                     : "Ohna Falby"
+email                    : "ohnafalby@gmail.com"
+subject                  : "Contact from the Life to Live website"
+description              : "An independent production company working on visual art, short films, commercials and features."
+# baseurl                  : "/lifetolivefilms" # the subpath of your site, e.g. /blog
+baseurl                  : "" # the subpath of your site, e.g. /blog
+# damurl                   : "https://lrdj.github.io/ltlf-assets"
+damurl                   : ""
+logo                     : "/i/logo_redo_261117.jpg" # path of logo image to display in the masthead, e.g. "/assets/i/88x88.png"
+url                      : "" # the base hostname & protocol for your site, e.g. http://example.com
+# twitter_username: jekyllrb
+# github_username:  jekyll
+#
+# TEAM
+team:
+  name             : "Life to Live Films"
+  line1            : "61 Oakfield Road"
+  line2            : ""
+  location         : "London"
+  postcode         : "N4 4LD"
+  country          : "UK"
+  people:
+    - name: "Ohna Falby (Producer)"
+      email: "ohnafalby@gmail.com"
+      mobile: "+44 7768 512689"
+    - name: "Lily Ashton (Research and Development)"
+      email: "lilyetta@hotmail.co.uk"
+      mobile: "+44 7934 494202"
+
+# Build settings
+markdown: kramdown
+theme: minima
+indexlength: 5 # was previously set to 8
+recentnumber: 4
+permalink: /:year/:month/:title.html
+
+plugins:
+  - jekyll-feed
+feed:
+  path                   : atom.xml
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+yandex_site_verification :
+naver_site_verification  :
+
+# Social Sharing
+twitter:
+  username               :
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+og_image                 : # Open Graph/Twitter default site image
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type                   : # Person or Organization (defaults to Person)
+  name                   : # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
+
+# Analytics
+analytics:
+  provider               : false # false (default), "google", "google-universal", "custom"
+  google:
+    tracking_id          :
+    anonymize_ip         : # true, false (default)
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      read_time: true
+
+
+

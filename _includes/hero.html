@@ -1,0 +1,6 @@
+{% if page.herolink %}
+<a href="{{ page.herolink }}"><img src="{{ site.baseurl }}/i/hero/{{ page.hero }}" class="newhero" alt="{{ page.heroalt }}" /></a>
+{% else %}
+<img src="{{ site.baseurl }}/i/hero/{{ page.hero }}" class="newhero" alt="{{ page.heroalt }}" />
+{% endif %}
+<p class="Filmheadercaption">{{ page.herocaption}}</p>

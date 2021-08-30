@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+
+  {% if forloop.index == site.indexlength %}{% break %}{% endif %}  
+
+  {% include archive-single.html type=page.entries_layout %}
+
+{% endfor %}
+
+{% assign archiveoffset = site.indexlength %}
+
+{% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+{% for year in postsByYear %}
+
+<h2 class="yeartitle">{{ year.name }}</h2>
+
+<div class="shuffleboxwrapper">
+
+  {% for post in year.items %}
+    <div class="shufflebox"><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title  | truncate: 25, "" | escape }}</a></div>
+  {% endfor %}
+
+  <br style="clear: both;" />
+</div>
+
+{% endfor %}
+

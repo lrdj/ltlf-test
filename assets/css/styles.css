@@ -1,0 +1,174 @@
+---
+permalink: assets/css/styles.css
+---
+/* imported styles from sister films */
+
+.record-listing {
+    border: 0 solid red;
+    width: 700px;
+    padding-top:1em;
+}
+.record-listing td {
+    border-right: 20px solid white;
+    margin: 0 0 1em;
+    vertical-align: top;
+    width: 330px;
+}
+.record-listing h3 {
+    border-bottom: 2px solid #000000;
+    line-height: 100%;
+    margin-bottom: 0.75em;
+    padding: 0 0 5px;
+    font-size: 1.15em;
+}
+.record-listing .visualisation {
+    float: left;
+    margin-right: 5px;
+}
+.record-listing p {
+    font-size: small;
+    line-height: 120%;
+    margin-bottom: 0.25%;
+}
+.record-listing .description {
+    display:block;
+    float: right;
+    width: 225px;
+    margin:0.5em 0 0 0 ;
+}
+.record-listing .award {
+    float: right;
+    width: 225px;
+}
+
+.record-listing .description .director {
+    display: block;
+    font-size: xx-small;
+    text-transform: uppercase;
+    padding-top:0.25em;
+}
+
+#content-para-group .record-listing .award img {
+    border: 0 solid red;
+    height: 28px;
+    width: auto;
+}
+.record-listing .running-time {
+    border: 0 solid blue;
+    display: block;
+    font-size: smaller;
+    font-style: italic;
+}
+.record-listing .menu {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #999999;
+    clear: both;
+    line-height: 100%;
+    padding: 0.25em 0.5em 0.5em 0;
+    margin-bottom: 1em;
+}
+
+.record-listing .menu a {
+    color: #FF6600;
+    font-size: xx-small;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.record-listing .menu a:hover {
+    color: #CC3300;
+    text-decoration: underline;
+}
+
+#Filmheader {
+/*    margin: 1em 0 0 0; */
+}
+
+.Filmheadercaption {
+    margin: 0.25em 0 1em 0;
+    font-size: smaller;
+    font-style: italic;
+}
+
+
+/* hacks for import from sister */
+
+.asset-body h2 {
+    font-weight: bold;
+}
+
+.entry-asset .asset-body img {
+    width: auto;
+}
+
+.asset-body .fullwidth img, .asset-body img.newhero {
+    width: 100%;
+}
+
+
+
+
+
+/* mods to Life to Live home page */
+
+#main-navigation {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+#main-navigation ul li a {
+    color: #333;
+    border-left: 1px solid #ccc;
+}
+
+#header .widget-sign-in .widget-content {
+    background-color: #333;
+}
+
+#header .widget-sign-in .widget-content, #header .widget-sign-in .widget-content a {
+    color: #ccc;
+}
+
+#header {
+    background-color:#fff;
+    background-image:none;
+    padding: 3px;
+}
+
+#header-inner {
+    background:#fff url("{{ site.baseurl }}/i/logo_redo_261117.jpg") no-repeat left center;
+    background-size: 120px;
+}
+
+.layout-wm .widget-header {
+    background-image: url("{{ site.baseurl }}/i/header-arrow-medium.gif");
+}
+
+
+/* column width hackery foo */
+
+.layout-wm #alpha {
+    width: 740px;
+}
+
+.layout-wm #beta {
+    left: 0;
+    width: 200px;
+}
+
+#header-name a, #header-name {
+    color: #333;
+}
+
+#header-description {
+    color: #333;
+}
+
+
+
+/* import /lifetolive.css */
+
+#header-content {
+    margin: 45px 0px 35px 120px;
+}
+
+.yeartitle { border-bottom: 1px solid #eee; font-weight: bold;}

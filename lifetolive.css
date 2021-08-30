@@ -1,0 +1,56 @@
+/* mods to Life to Live home page */
+
+#main-navigation {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+#main-navigation ul li a {
+    color: #333;
+    border-left: 1px solid #ccc;
+}
+
+#header .widget-sign-in .widget-content {
+    background-color: #333;
+}
+
+#header .widget-sign-in .widget-content, #header .widget-sign-in .widget-content a {
+    color: #ccc;
+}
+
+#header {
+    background-color:#fff;
+    background-image:none;
+    padding: 3px;
+}
+
+#header-inner {
+    background:#fff url("/i/logo_redo_261117.jpg") no-repeat left center;
+    background-size: 120px;
+}
+
+.layout-wm .widget-header {
+    background-image: url("/i/header-arrow-medium.gif");
+}
+
+
+/* column width hackery foo */
+
+.layout-wm #alpha {
+    width: 740px;
+}
+
+.layout-wm #beta {
+    left: 0;
+    width: 200px;
+}
+
+#header-name a, #header-name {
+    color: #333;
+}
+
+#header-description {
+    color: #333;
+}
+
+
+

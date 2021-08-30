@@ -1,0 +1,48 @@
+- 
+  name: "BIFA"
+  desc: "British Independent Film Awards"
+  icon: "BIFA-award.png"
+- 
+  name: "Sundance"
+  desc: "Sundance"
+  icon: "sundance-award.gif"
+- 
+  name: "EIFF"
+  desc: "Edinburgh International Film Festival"
+  icon: "EIFF-award.png"
+- 
+  name: "Encounters-nom"
+  desc: "Encounters nomination 2018"
+  icon: "Encounters-nomination.png"
+- 
+  name: "Encounters-win"
+  desc: "Encounters winner 2014"
+  icon: "Encounters-winner.png"
+-
+  name: "BAFTA"
+  desc: "Bafta Awards"
+  icon: "bafta.jpg"
+-
+  name: "Vimeo"
+  desc: "Vimeo staff pick award"
+  icon: "VimeoStaffPick28.jpg"
+-
+  name: "EAA"
+  desc: "Nominated for Best Short, European Academy Awards"
+  icon: "EFA.gif"
+-
+  name: "Sapporo"
+  desc: "Sapporo"
+  icon: "sapporo.gif"
+-
+  name: "Semaine"
+  desc: "Semaine de la critique"
+  icon: "semaine-logo-35.png"
+-
+  name: "Clermont"
+  desc: "Selected Clermont-Ferant"
+  icon: "Clermont.png"
+-
+  name: "Nice"
+  desc: "This is a new award that"
+  icon: "nice.jpg"

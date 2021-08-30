@@ -1,0 +1,24 @@
+{% if include.type == "sidebar" %}
+
+<dt><a href="{{ post.url | relative_url }}">{{ post.title }}</a></dt>
+      <dd>{{ post.excerpt }}</dd>
+      <dd class="entry-meta">By {{ post.author }} {% if post.comments %}<span class="separator">|</span> <a href="{{ post.url | relative_url }}#comments" rel="permalink">Read comments</a>{% endif %}</dd>
+
+{% else %}
+
+<div id="{{ post.id }}" class="entry-asset asset hentry">
+  <div class="asset-header">
+    <h2 class="asset-name entry-title"><a href="{{ post.url | relative_url }}" rel="permalink">{{ post.title }}</a></h2>
+    <div class="asset-meta">
+      <span class="byline">By <span class="vcard author">{{ post.author }}</span> on {{ post.date }}</span>&nbsp;&nbsp;{% if post.read_time %}&nbsp;<span class="separator">|</span> <i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}{% endif %} {% if post.comments %}<span class="separator">|</span>  <a href="{{ post.url | relative_url }}#comments" rel="permalink">Read comments</a>{% endif %}
+    </div>
+  </div>
+  <div class="asset-content entry-content">
+    <div class="asset-body">
+      {{ post.content }}
+    </div>
+  </div>
+  <div class="asset-footer"></div>
+</div>
+
+{% endif %}

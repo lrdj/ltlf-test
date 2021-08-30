@@ -1,0 +1,56 @@
+
+{% if include.type == "films" %}
+
+<p class="menu"><a href="{{ site.baseurl }}/films-in-development.html">&gt; feature projects and films in development</a></p>
+
+<table class="record-listing">
+{% tablerow film in site.data.films cols:3 %}
+  <h3>{{ film.title }} ({{ film.year }})</h3>
+  <p>
+    <a href="{{ film.youtube }}" class="fancybox fancybox.iframe"><img alt="Play {{ film.title }}" src="{{ site.baseurl }}/i/{{ film.playimage }}" width="223" height="72" /></a>
+  </p>
+  <p class="description">
+  {{ film.description }}  
+  <span class="director">A film by {{ film.director }}</span> 
+  <span class="running-time">Running time {{ film.runtime }}</span>
+  </p>
+  <p class="award">
+    {% for award in film.awards %}
+      {% for asset in site.data.awards %}
+        {% if award contains asset.name %}<img src="{{ site.baseurl }}/i/awards/{{ asset.icon }}" alt="{{ asset.desc }}" title="{{ asset.desc }}" width="50" />{% endif %}
+      {% endfor %}
+    {% endfor %}
+  </p>
+  <p class="menu">
+    {% if film.trailerURL %}<a href="{{ film.trailerURL }}" class="fancybox fancybox.iframe">&gt; trailer</a>{% endif %}
+    {% if film.imagesURL %}<a href="{{ film.imagesURL }}">&gt; images</a>{% endif %}
+    {% if film.pressURL %}<a href="{{ film.pressURL }}">&gt; press reviews</a>{% endif %}
+    {% if film.exhibURL %}<a href="{{ film.exhibURL }}">&gt; exhibition</a>{% endif %}
+    {% if film.creditsURL %}<a href="{{ film.creditsURL }}">&gt; credits</a>{% endif %}
+    {% if film.awardsURL %}<a href="{{ film.awardsURL }}">&gt; awards</a>{% endif %}
+  </p>
+{% endtablerow %}
+</table>
+
+{% else %}
+
+<table class="record-listing">
+{% tablerow film in site.data.commercials cols:3 %}
+  <h3>{{ film.title }}</h3>
+  <p>
+    <a href="{{ film.youtube }}" class="fancybox fancybox.iframe"><img alt="Play {{ film.title }}" src="{{ site.baseurl }}/i/{{ film.playimage }}" width="225" height="109" /></a>
+  </p>
+  <p class="description">
+    {{ film.description }}  
+    <span class="running-time">Production Company: {{ film.productionco }}</span> 
+    <span class="running-time">Ad Agency: {{ film.agency }}</span> 
+    <span class="running-time">Directed by: {{ film.director }}</span>
+  </p>
+  <p class="menu"></p>
+
+{% endtablerow %}
+</table>
+
+
+
+{% endif %}
